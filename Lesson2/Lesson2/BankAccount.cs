@@ -22,39 +22,38 @@ namespace Lesson2
             this.number = nextnumber;
             CreateNumber();
         }
+        public BankAccount(double money):this() 
+        {
+            balance = money;
+        }
+        public BankAccount(Chek type):this()
+        {
+            chek = type; 
+        }
+        public BankAccount(double money, Chek type) : this()
+        {
+            balance = money;
+            chek = type;
+        }
         public int GetNumber()
         {
             return this.number;
-        }
-
-        public void SetNumber(int number)
-        {
-            this.number = number;
         }
 
         public double GetBalance()
         {
             return this.balance;
         }
-        public void SetBalance(double balance)
-        {
-            this.balance = balance;
-        }
-    
+
         public Chek GetChek()
         {
         return this.chek;
-        }
-
-        public void SetChek(Chek chek)
-        {
-        this.chek = chek;
-
         }
     }
 }
     enum Chek
     {
+        no,
         debit,
         credit,
         current
