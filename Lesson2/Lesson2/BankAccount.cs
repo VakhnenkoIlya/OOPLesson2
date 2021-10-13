@@ -8,46 +8,32 @@ namespace Lesson2
 {
     class BankAccount
     {
-        private int number;
-        private double balance;
-        private Chek chek;
-        private static int nextnumber = 1;
+        public int Number { get; set; }
+        public double Balance { get; set; }
+        internal Chek Chek { get; set; }
 
+        private static int nextnumber = 1;
         private static void CreateNumber()
         {
             nextnumber++;
         }
         public BankAccount() 
         {
-            this.number = nextnumber;
+            this.Number = nextnumber;
             CreateNumber();
         }
         public BankAccount(double money):this() 
         {
-            balance = money;
+            Balance = money;
         }
         public BankAccount(Chek type):this()
         {
-            chek = type; 
+            Chek = type; 
         }
         public BankAccount(double money, Chek type) : this()
         {
-            balance = money;
-            chek = type;
-        }
-        public int GetNumber()
-        {
-            return this.number;
-        }
-
-        public double GetBalance()
-        {
-            return this.balance;
-        }
-
-        public Chek GetChek()
-        {
-        return this.chek;
+            Balance = money;
+            Chek = type;
         }
     }
 }
