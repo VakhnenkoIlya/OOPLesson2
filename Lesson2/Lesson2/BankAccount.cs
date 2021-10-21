@@ -17,6 +17,19 @@ namespace Lesson2
         {
             nextnumber++;
         }
+        public bool GetTransfer(ref BankAccount from, double summ)
+        {
+            if (from.Balance >= summ)
+            {
+                from.Balance -= summ;
+                Balance += summ;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public BankAccount() 
         {
             this.Number = nextnumber;
